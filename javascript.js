@@ -20,4 +20,15 @@ function calc(op){
     }
 
     document.getElementById("output").value = output;
+
+    var newHistory = "<p>" + num1 + " " + op + " " + num2 + " = " + output + "</p>";
+    var history = document.getElementById("history");
+
+    history.innerHTML = newHistory + history.innerHTML;
+
+    if(history.children.length > 10){
+        history.removeChild(history.childNodes[10])
+    }
 }
+
+    
